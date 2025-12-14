@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 import { VscCode } from 'react-icons/vsc'; // Logo Icon
 import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri'; // Social Icons
 import { FaPaperPlane, FaCode } from 'react-icons/fa'; // Button Icons
 import profilePic from '../../assets/profile-pic.png'; // Import your image
 import { SiKaggle } from 'react-icons/si';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Hero = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
     const name = "Engr. Yasir Hussain";
     const role = "Data & Automation Engineer";
     const tagline = `Results-driven Data & Automation Engineer with 2+ years of experience integrating Large Language
 Models (LLMs) and predictive analytics into enterprise workflows. Expert in Python, TensorFlow, and
 PyTorch, with specialized proficiency in deploying AI agents using LangChain and Power Platform for
 scalable business automation.`;
+    const handleLinkClick = () => {
+        setMenuOpen(false);
+    };
 
     return (
         <div className="hero-container">
@@ -22,12 +27,16 @@ scalable business automation.`;
                     <VscCode className="logo-icon" />
                     {name}
                 </div>
-                <nav className="nav-links">
-                    <a href="#home" className="active">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
+                {/* --- Hamburger Button (Visible on Mobile) --- */}
+                <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? <FiX /> : <FiMenu />}
+                </button>
+                <nav className={`nav-links ${menuOpen ? 'open' : ''}`}> 
+                    <a href="#home" onClick={handleLinkClick}>Home</a>
+                    <a href="#about" onClick={handleLinkClick}>About</a>
+                    <a href="#projects" onClick={handleLinkClick}>Projects</a>
+                    <a href="#skills" onClick={handleLinkClick}>Skills</a>
+                    <a href="#contact" onClick={handleLinkClick}>Contact</a>
                 </nav>
             </header>
 

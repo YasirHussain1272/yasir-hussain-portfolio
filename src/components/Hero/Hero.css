@@ -99,6 +99,7 @@
     line-height: 1.6;
     margin: 25px 0;
     color: #a8b3cf;
+    text-align: justify;
 }
 
 /* --- Buttons Styling --- */
@@ -194,4 +195,79 @@
 .kaggle{
     padding-bottom: 10px;
     width: 46px;
+}
+/* --- NEW: Hamburger Toggle Button --- */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: #1aff8c;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it is above everything */
+}
+
+/* --- Mobile Styles (Max 768px) --- */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 0 20px;
+    }
+
+    /* Header adjustments */
+    .header {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    .logo {
+        margin-bottom: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Main Content stacking */
+    .hero-main {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
+        padding-bottom: 40px;
+        padding-top: 30px;
+    }
+
+    .text-content {
+        max-width: 100%;
+        order: 2; /* Text below image */
+    }
+
+    /* Image adjustments */
+    .image-container {
+        width: 250px;
+        height: 250px;
+        order: 1; /* Image above text */
+        margin-bottom: 40px;
+    }
+
+    /* Font size and buttons */
+    .title-name {
+        font-size: 3rem;
+    }
+    .title-role {
+        font-size: 1.5rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .btn {
+        width: 80%;
+    }
+    .social-links {
+        justify-content: center;
+        margin-top: 30px;
+    }
 }

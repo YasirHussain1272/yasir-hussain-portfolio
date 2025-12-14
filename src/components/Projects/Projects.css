@@ -31,7 +31,8 @@
 }
 
 .project-card {
-    background-color: #161b22; /* Slightly lighter dark background for the card */
+    background-color: #161b22;
+    /* Slightly lighter dark background for the card */
     padding: 25px;
     border-radius: 10px;
     border: 1px solid #30363d;
@@ -43,7 +44,8 @@
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(26, 255, 140, 0.15), 0 0 15px rgba(26, 255, 140, 0.4); /* Neon hover glow */
+    box-shadow: 0 10px 20px rgba(26, 255, 140, 0.15), 0 0 15px rgba(26, 255, 140, 0.4);
+    /* Neon hover glow */
 }
 
 .project-card h3 {
@@ -56,7 +58,8 @@
 .project-card p {
     font-size: 1rem;
     color: #a8b3cf;
-    flex-grow: 1; /* Ensures equal height for content */
+    flex-grow: 1;
+    /* Ensures equal height for content */
 }
 
 .tech-tags {
@@ -84,4 +87,55 @@
 
 .project-links a:hover {
     text-decoration: underline;
+}
+
+/* --- Mobile Styles (Max 768px) --- */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 50px 20px;
+    }
+
+    .projects-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .projects-grid {
+        /* This ensures only one column on small screens */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+        /* Slightly smaller heading */
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+        /* Smaller description */
+    }
+
+    /* For Skill Cards: */
+    .skill-category h3 {
+        font-size: 1.3rem;
+        /* Category heading */
+    }
+
+    .skill-list li {
+        font-size: 0.95rem;
+        /* Skill item text */
+        padding: 8px 12px;
+    }
 }

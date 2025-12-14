@@ -31,7 +31,8 @@
     padding-bottom: 5px;
 }
 
-.contact-info, .contact-form-container {
+.contact-info,
+.contact-form-container {
     flex: 1;
 }
 
@@ -131,4 +132,65 @@
 .submit-btn:hover {
     box-shadow: 0 0 25px rgba(26, 255, 140, 1);
     transform: translateY(-2px);
+}
+
+/* --- Mobile Styles (Max 768px) --- */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 50px 20px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        /* Stack info and form */
+        gap: 40px;
+        padding: 30px 20px;
+    }
+
+    .contact-header h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Contact Info adjustments */
+    .contact-info {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #30363d;
+        /* Add separator below info */
+        padding-bottom: 30px;
+    }
+
+    .detail-item {
+        font-size: 1rem;
+    }
+
+    /* Form adjustments */
+    .contact-form-container {
+        padding-left: 0;
+    }
+
+    .submit-btn {
+        width: 90%;
+        /* Make button full width */
+        align-self: stretch;
+    }
+
+    .contact-content {
+        /* Reduce the overall padded area */
+        padding: 20px 10px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        /* Smaller input padding */
+        font-size: 0.95rem;
+        /* Smaller text size inside input */
+        width: 90%;
+    }
+
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
 }

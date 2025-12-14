@@ -63,7 +63,51 @@
 }
 
 .skill-list li:hover {
-    background-color: #1aff8c1a; /* Subtle green background on hover */
+    background-color: #1aff8c1a;
+    /* Subtle green background on hover */
     border-color: #1aff8c;
     color: #1aff8c;
+}
+
+/* --- Mobile Styles (Max 768px) --- */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 50px 20px;
+    }
+
+    .skills-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+        gap: 30px;
+    }
+
+    .skill-category {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+        /* Slightly smaller heading */
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+        /* Smaller description */
+    }
+
+    /* For Skill Cards: */
+    .skill-category h3 {
+        font-size: 1.3rem;
+        /* Category heading */
+    }
+
+    .skill-list li {
+        font-size: 0.95rem;
+        /* Skill item text */
+        padding: 8px 12px;
+    }
 }

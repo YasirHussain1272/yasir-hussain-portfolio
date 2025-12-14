@@ -39,6 +39,7 @@
 
 .about-text p {
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .highlight {
@@ -81,4 +82,35 @@
     margin: 0;
     font-size: 0.95rem;
     color: #a8b3cf;
+}
+
+/* --- Mobile Styles (Max 768px) --- */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 50px 20px;
+    }
+    .about-header h2 {
+        font-size: 2.2rem;
+    }
+    .about-intro {
+        flex-direction: column; /* Stack text and timeline */
+        gap: 30px;
+    }
+    .about-text {
+        font-size: 1rem;
+    }
+    /* Timeline adjustments */
+    .timeline {
+        border-left: none; /* Remove vertical line */
+        padding-left: 0;
+        padding-top: 20px;
+        border-top: 2px solid #586069; /* Add horizontal separator */
+    }
+    .timeline-item::before {
+        display: none; /* Hide circle dots on mobile */
+    }
+    .timeline h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
