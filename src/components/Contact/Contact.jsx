@@ -102,7 +102,7 @@ const Contact = () => {
                     </div>
                     <div className="detail-item">
                         <FiPhone className="detail-icon" />
-                        <a href="tel:+923055927599">+93 (305) 592-7599</a>
+                        <a href="tel:+923055927599">+92 (305) 592-7599</a>
                     </div>
                     <div className="detail-item">
                         <FiMapPin className="detail-icon" />
