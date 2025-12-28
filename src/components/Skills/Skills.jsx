@@ -28,7 +28,7 @@ const skillsData = [
     },
     {
         category: "Databases & Platforms",
-        skills: ["SQL (MySQL)", "Dataverse", "SharePoint", "Dataverse", " Power Platform",]
+        skills: ["SQL (MySQL)", "Dataverse", "SharePoint", "MongoDB", " Power Platform",]
     },
 ];
 
