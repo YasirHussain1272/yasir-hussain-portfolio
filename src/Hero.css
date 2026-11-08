@@ -1,0 +1,983 @@
+/* ==========================================================================
+   Engr. Yasir Hussain - Portfolio Hero & Aerospace Avionics Theme
+   Modern, High-Precision Dark Aesthetic (Anti-Slop, Production-Grade)
+   ========================================================================== */
+
+:root {
+  --bg-primary: #080c14;
+  --bg-secondary: #0d131f;
+  --bg-card: rgba(14, 20, 34, 0.75);
+  --bg-card-hover: rgba(19, 28, 48, 0.85);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(16, 185, 129, 0.35);
+  --border-cyan: rgba(6, 182, 212, 0.3);
+
+  --accent-emerald: #10b981;
+  --accent-emerald-light: #34d399;
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: #38bdf8;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base Container */
+.hero-container {
+  position: relative;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-display);
+}
+
+/* Aerospace Technical Grid & Radar Ambient Glow */
+.hero-ambient-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 75% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  background-position: center center;
+  z-index: 1;
+}
+
+/* Subtle Animated Radar Sweep Line */
+.hero-radar-glow {
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(6, 182, 212, 0.03) 50%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Header (Strict Top Bar Contract: Brand | Links | Primary Action)
+   ========================================================================== */
+.hero-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(8, 12, 20, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-brand-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--accent-emerald-light);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+.hero-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.hero-nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.hero-nav-link:hover,
+.hero-nav-link.active {
+  color: var(--accent-emerald-light);
+}
+
+.hero-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-emerald-light);
+  box-shadow: 0 0 8px var(--accent-emerald-light);
+  border-radius: 2px;
+}
+
+.hero-header-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.hero-btn-cta {
+  padding: 9px 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #04100c;
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  border: 1px solid #34d399;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+}
+
+.hero-btn-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.6);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+}
+
+.hero-menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.hero-menu-toggle:hover {
+  border-color: var(--border-active);
+  color: var(--accent-emerald-light);
+}
+
+@media (min-width: 1025px) {
+  .hero-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Mobile Nav Drawer */
+.hero-mobile-drawer {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 32px;
+  background: rgba(13, 19, 31, 0.98);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(20px);
+  width: 100%;
+}
+
+.hero-mobile-drawer.open {
+  display: flex;
+}
+
+.hero-mobile-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero-mobile-link:hover {
+  color: var(--accent-emerald-light);
+}
+
+/* ==========================================================================
+   Main Hero Section (2-Column Grid)
+   ========================================================================== */
+.hero-main {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px 48px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Left Column - Typographic Hierarchy */
+.hero-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Specialty Kicker (Unboxed, clean tracking) */
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent-emerald-light);
+  text-transform: uppercase;
+}
+
+.hero-kicker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
+}
+
+/* Main Display Name */
+.hero-title-name {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(135deg, #ffffff 40%, #a7f3d0 80%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dynamic Typing Role */
+.hero-role-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.hero-title-role {
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 500;
+  color: var(--accent-emerald-light);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-typing-caret {
+  display: inline-block;
+  width: 3px;
+  height: 1.25em;
+  background-color: var(--accent-cyan-light);
+  margin-left: 4px;
+  animation: blink-caret 0.9s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Editorial Description */
+.hero-description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.hero-description strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* Action Button Cluster */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.hero-btn {
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #03140d;
+  border: 1px solid #34d399;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.55);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+}
+
+.hero-btn-secondary {
+  background: rgba(14, 20, 34, 0.85);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.hero-btn-secondary:hover {
+  border-color: var(--border-active);
+  color: var(--accent-emerald-light);
+  background: rgba(16, 185, 129, 0.08);
+  transform: translateY(-2px);
+}
+
+.hero-btn-resume {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald-light);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+}
+
+.hero-btn-resume:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: var(--accent-emerald-light);
+  transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  padding: 13px 18px;
+}
+
+.hero-btn-outline:hover {
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Unboxed Verification Stats Strip (Anti-Slop Zero Pill Discipline) */
+.hero-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 24px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-label {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.hero-stat-label span {
+  color: var(--accent-emerald-light);
+  font-weight: 500;
+}
+
+/* Social Badges Bar */
+.hero-social-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 1.35rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-social-link:hover {
+  color: #ffffff;
+  border-color: var(--border-active);
+  background: rgba(16, 185, 129, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+}
+
+.hero-copy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.825rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-mono);
+}
+
+.hero-copy-email:hover {
+  border-color: var(--border-active);
+  color: var(--accent-emerald-light);
+}
+
+/* ==========================================================================
+   Right Column: Interactive Engineering Cockpit & Profile Showcase
+   ========================================================================== */
+.hero-visual-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.08);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Corner Technical HUD Brackets */
+.hero-card-bracket {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(16, 185, 129, 0.4);
+  pointer-events: none;
+}
+.hero-card-bracket.top-left { top: 10px; left: 10px; border-top: 2px solid; border-left: 2px solid; }
+.hero-card-bracket.top-right { top: 10px; right: 10px; border-top: 2px solid; border-right: 2px solid; }
+.hero-card-bracket.bottom-left { bottom: 10px; left: 10px; border-bottom: 2px solid; border-left: 2px solid; }
+.hero-card-bracket.bottom-right { bottom: 10px; right: 10px; border-bottom: 2px solid; border-right: 2px solid; }
+
+/* Cockpit View Switcher Tabs */
+.hero-cockpit-tabs {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+}
+
+.hero-cockpit-tab {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.hero-cockpit-tab.active {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile Image Stage */
+.hero-image-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 10px;
+  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.18) 0%, rgba(6, 182, 212, 0.05) 55%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer Rotating Ring */
+.hero-stage-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(16, 185, 129, 0.4);
+  animation: rotate-slow 40s linear infinite;
+  pointer-events: none;
+}
+
+.hero-stage-ring-inner {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  pointer-events: none;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid #080c14;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  background-color: #0d131f;
+  z-index: 2;
+}
+
+/* Floating Status Indicator Badges */
+.hero-stage-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  background: rgba(8, 12, 20, 0.95);
+  border: 1px solid var(--border-active);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--accent-emerald-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  z-index: 5;
+}
+
+/* Interactive Telemetry HUD Pane */
+.hero-hud-telemetry {
+  background: rgba(6, 10, 18, 0.9);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--font-mono);
+}
+
+.hero-hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.hero-hud-val {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.hero-hud-val.emerald {
+  color: #34d399;
+}
+
+/* Live Flight Vector Simulation Horizon */
+.hero-artificial-horizon {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  border-radius: 8px;
+  background: #090e18;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-horizon-line {
+  position: absolute;
+  width: 120%;
+  height: 2px;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  transition: transform 0.1s ease-out;
+}
+
+.hero-aircraft-reticle {
+  position: relative;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  color: #f8fafc;
+}
+
+/* Card Footer Toolbar */
+.hero-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.hero-photo-switch-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.725rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.hero-photo-switch-btn:hover {
+  border-color: var(--border-active);
+  color: var(--accent-emerald-light);
+}
+
+/* ==========================================================================
+   Full Portfolio Subsections (Projects, Avionics, AI, Contact)
+   ========================================================================== */
+.hero-details-strip {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 32px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-section-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(12px);
+  margin-bottom: 32px;
+}
+
+.hero-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   Modal Dialogs (Quick Contact & Project Detail)
+   ========================================================================== */
+.hero-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 14, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hero-modal-content {
+  background: #0d131f;
+  border: 1px solid var(--border-active);
+  border-radius: 16px;
+  max-width: 540px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.15);
+  animation: modal-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-pop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hero-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.hero-modal-close:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Mobile & Tablet)
+   ========================================================================== */
+/* ==========================================================================
+   Responsive Fixes for Mobile & Tablet (Navbar, Overview & Code Blocks)
+   ========================================================================== */
+
+/* 1. Hide desktop navigation and show menu toggle on tablet & mobile */
+@media (max-width: 1024px) {
+  .hero-nav,
+  .nav-links,
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .hero-menu-toggle,
+  .menu-toggle {
+    display: inline-flex !important;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 2. Mobile & Tablet Viewport Adjustments (≤ 768px) */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: clip;
+  }
+
+  .hero-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-container {
+    padding-top: 68px;
+  }
+
+  /* Main Overview Section Spacing */
+  .hero-main {
+    padding: 20px 16px;
+    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hero-text-content,
+  .hero-visual-card {
+    min-width: 0;
+  }
+
+  .hero-title-name {
+    font-size: 1.85rem !important;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-title-role {
+    font-size: 1rem !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* 3. Python Script & Code Block Horizontal Scroll Fix */
+  pre, 
+  code, 
+  .code-container, 
+  .code-block-wrapper,
+  div[class*="code"] {
+    max-width: 100%;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre;
+    word-wrap: normal;
+    box-sizing: border-box;
+  }
+
+  /* Prevent section cards from overflowing */
+  .hero-section-card,
+  .hero-visual-card {
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 16px 12px;
+  }
+
+  .hero-cockpit-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-cockpit-tab {
+    min-width: 0;
+    white-space: normal;
+  }
+}
+
+/* Extra small devices (iPhone SE, compact Androids) */
+@media (max-width: 480px) {
+  .hero-header-action .hero-btn-cta {
+    display: none;
+  }
+
+  .hero-header {
+    gap: 12px;
+  }
+
+  .hero-brand {
+    min-width: 0;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .hero-brand span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-title-name {
+    font-size: 1.6rem !important;
+  }
+
+  .hero-stats-strip {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .hero-cockpit-tab {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 4px;
+    font-size: 0.65rem;
+  }
+
+  .hero-hud-row {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .hero-hud-val {
+    max-width: 65%;
+    overflow-wrap: anywhere;
+    text-align: right;
+  }
+
+  .hero-card-footer {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-photo-switch-btn {
+    white-space: normal;
+  }
+}
